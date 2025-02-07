@@ -1,6 +1,29 @@
 
 let lista = JSON.parse(localStorage.getItem("asistencia")) || [];
 
+document.getElementById('fileInput').addEventListener('change', function (e) {
+    const file = e.target.files[0];
+
+    if (file && file.name.endsWith('.xlsx')) {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+            const data = new Uint8Array(event.target.result);
+            const workbook = XLSX.read(data, { type: 'array' });
+            const sheetName = workbook.SheetNames[0]; // Selecciona la primera hoja
+            const sheet = workbook.Sheets[sheetName];
+            const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+            // Aquí puedes procesar los datos y agregarlos a tu lista
+            console.log(jsonData); // Muestra los datos en la consola para verificar
+        };
+
+        reader.readAsArrayBuffer(file);
+    } else {
+        alert("Por favor, selecciona un archivo .xlsx.");
+    }
+});
+
+
 function renderizarLista() {
     const tabla = document.querySelector("#tablaAsistencia tbody");
     tabla.innerHTML = "";
