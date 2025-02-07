@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Asistencia</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Lista de Asistencia</h1>
+    </header>
+
+    <div class="container">
+        <!-- Formulario para agregar una persona -->
+        <div class="formulario-agregar">
+            <input type="text" id="nuevoNombre" class="input-nombre" placeholder="Ingresa el nombre de la persona">
+            <button onclick="agregarPersona()">Agregar Persona</button>
+        </div>
+
+        <!-- Botón para cargar el archivo Excel -->
+        <input type="file" id="fileInput" accept=".xlsx, .xls">
+
+        <!-- Tabla de asistencia -->
+        <table id="tablaAsistencia">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Lun</th>
+                    <th>Mar</th>
+                    <th>Mié</th>
+                    <th>Jue</th>
+                    <th>Vie</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Botón para guardar los cambios -->
+        <button onclick="guardarAsistencia()">Guardar Cambios</button>
+
+        <button onclick="tomarPantallazo()">Guardar Pantallazo</button>
+    </div>
+
+
+<script src="app.js"></script>
+</body>
+
+</html>

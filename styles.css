@@ -1,0 +1,110 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5dc;
+    color: #333;
+}
+
+header {
+    background-color: #f584bd;
+    color: #f5f5dc;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 0 0 20px 20px;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+    max-width: 1000px;
+    padding: 20px;
+    background-color: #eeeee9;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 1.1em;
+}
+
+table th {
+    background-color: #ff66b2;
+    color: white;
+}
+
+button {
+    background-color: #ff66b2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #ff3385;
+    transform: scale(1.05);
+}
+
+input[type="file"],
+.input-nombre {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+.acciones button {
+    background-color: #ff3385;
+    padding: 6px 12px;
+    margin: 0 5px;
+    border-radius: 20px;
+}
+
+.acciones button:hover {
+    background-color: #ff66b2;
+}
+
+.input-checkbox {
+    width: 18px;
+    height: 18px;
+}
+
+.formulario-agregar {
+    margin: 20px 0;
+}
+
+/* Diseño adaptativo para móvil */
+@media (max-width: 768px) {
+
+    table th,
+    table td {
+        padding: 10px;
+    }
+
+    button {
+        padding: 8px 15px;
+    }
+
+    .input-nombre {
+        font-size: 1em;
+    }
+}
